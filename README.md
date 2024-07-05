@@ -6,65 +6,71 @@
 - JHON BERLY TAYPE ALCCACCAHUA 
 - LEONARDO ALONSO RAMIREZ QUIROZ
 
+![Algoritmo_Genetico](https://hackster.imgix.net/uploads/attachments/953859/uploads2ftmp2f00dcd17f-b21e-4f3c-a696-e51994a927962fimages_abc1280x960_WFRTiqBVKE.png?auto=compress&w=900&h=675&fit=min&fm=jpg)
+
 ## Windows
+
+Primero asegurarnos de tener instalado Python, para ello pueden recurrir a la pagina oficial para descargarlo e intalarlo.
+
+![Python](https://www.python.org/)
 
 ## MacOS
 
+No se, no tengo 
+
 ## Linux
 
-Primero instalar algunas dependencias segun la distribucion que uses de Linux.
+De igual manera nos aseguramos primero de tener python instaldo, para ello usamos el siguiente comando:
+
+```bash
+python --version
+```
+
+Si nos da error, consideremos instalar python ya sea desde la pagina oficial ![Python](https://www.python.org/) o bien usando el siguiente comando dependiendo de la distribucion que use.
 
 ### Ubuntu / Debian
 
 ```bash
 sudo apt-get update
-sudo apt-get install build-essential cmake xorg-dev libglu1-mesa-dev
-sudo apt-get install libgl-dev libglfw3-dev
+sudo apt-get install python3 python3-pip
 ```
 
 ### Arch/Linux
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S glfw
+sudo pacman -S python3 python3-pip
 ```
 
-Para compilar el proyecto usar el siguiente comando:
+Para ejecutar el proyecto se recomiendo hacer uso de un entorno virtual de python para mantener todo limpio y en caso de eliminar el el directorio, eliminarlo con todas las dependencias instaladas.
+
+Para ello ejecutamos el siguiente comando dentro del directorio del repositoio clonado.
 
 ```bash
-make
+python3 -m venv .venv
 ```
 
-Ahora dirijase al directorio `/bin` y ejecute el programa como `./mi_programa`
-Por ahora el codigo solo se ha probado sobre Linux.
+Seguido activamos el entorno virtual, con el siguiente comando:
 
-![Algoritmo_Genetico](./pictures/FirstAlgoritmoGen.png)
+macOS/Linux
+```bash
+. .venv/bin/activate
+```
 
-## Problema del viajero
+Windows
+```bash
+.venv\Scripts\activate
+```
 
-[![Algoritmo_Genetico_Problema_del_Viajero](./pictures/AlgoritmoGen.png)](https://colab.research.google.com/drive/1vmpZAA0UFMOu1crGBipf6v4-MEBGyev-?usp=sharing)
+Continuando usaremos el siguiente comando para instalar las dependencias
+```bash
+pip install -r requirements.txt
+```
 
-<p style="text-align:center; font-size: 18px;font-weight:bold">Haz click ▲ Haz click</p>
-
-### Si necesita installar GLFW y GlAD manualmente 
-
-1. Primero clonamos el repositorio oficial de GLFW `https://github.com/glfw/glfw`
-
-2. Seguimos los siguintes pasos, esto deberia de instalar GLFW en nuestro sistema
+Ahora ejecutamos el codigo
 
 ```bash
-cd glfw
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-```
-3. Ahora generando el archivo al libreria `libglad.a`
-
-```bash
-gcc -c glad.c -o glad.o
-ar rcs libglad.a glad.o
+python3 inference_classifier.py
 ```
 
-Nota: El repositorio ya tiene las librerias necesarias para ejecutar el programa por lo que necesita generar la libreria de `libglad.a`
+y listo.
