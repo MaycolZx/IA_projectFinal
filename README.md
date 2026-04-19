@@ -1,11 +1,5 @@
 # Sign Language
 
-## Integrantes:
-- MAYCOL ALEXANDER CANAVERI TACO
-- JAIME MATEO GUTIERREZ MUÑOZ
-- JHON BERLY TAYPE ALCCACCAHUA 
-- LEONARDO ALONSO RAMIREZ QUIROZ
-
 ![Algoritmo_Genetico](https://hackster.imgix.net/uploads/attachments/953859/uploads2ftmp2f00dcd17f-b21e-4f3c-a696-e51994a927962fimages_abc1280x960_WFRTiqBVKE.png?auto=compress&w=900&h=675&fit=min&fm=jpg)
 
 ## Windows
